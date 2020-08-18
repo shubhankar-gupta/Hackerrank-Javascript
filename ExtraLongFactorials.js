@@ -23,7 +23,7 @@ function readLine() {
 }
 
 // Complete the extraLongFactorials function below.
-function extraLongFactorials(n) 
+function extraLongFactorials(n)
 {
     let factorial = 1n;
     for(let i = 1n; i <= BigInt(n); i++) {
