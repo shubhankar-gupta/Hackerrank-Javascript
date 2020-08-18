@@ -26,14 +26,14 @@ function readLine() {
 function miniMaxSum(arr) 
 {
     let sum=0n;
-    let min=BigInt(Math.min(...arr));
-    let max=BigInt(Math.max(...arr));
-    for(let x of arr)
-    {
-        sum+=BigInt(x);
+    const min=BigInt(Math.min(...arr));
+    const max=BigInt(Math.max(...arr));
+
+    for(let element of arr) {
+        sum += BigInt(element);
     }
 
-    console.log(Number(BigInt(sum)-BigInt(max))+" "+Number(BigInt(sum)-BigInt(min)));
+    console.log(Number(BigInt(sum) - BigInt(max)) +" "+ Number(BigInt(sum) - BigInt(min)));
 }
 
 function main() {

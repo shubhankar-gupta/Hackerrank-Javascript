@@ -25,13 +25,12 @@ function readLine() {
 }
 
 // Complete the formingMagicSquare function below.
-function findCost(s,magic_matrix_row)
+function findCost(s,magicMatrix)
 {
-    s=s.map(s=>s.join('')).join('');
-    let cost=0;
-    for(let i=0;i<9;i++)
-    {
-        cost+=Math.abs(s[i]-magic_matrix_row[i]);
+    s = s.map(s=>s.join('')).join('');
+    let cost = 0;
+    for(let i = 0; i < 9; i++) {
+        cost += Math.abs(s[i]-magicMatrix[i]);
     }
     return cost;
 }
@@ -39,18 +38,19 @@ function findCost(s,magic_matrix_row)
 function formingMagicSquare(s) 
 {
     let sum;
-    let all_magic=['618753294','816357492','834159672','438951276','672159834','276951438','294753618','492357816',];//all magic squares list
-    let cost=new Array(all_magic.length);
-    for(let i=0;i<all_magic.length;i++)
-    {
-        cost[i]=findCost(s,all_magic[i]);
+    const magicSquares = ['618753294','816357492','834159672','438951276','672159834','276951438','294753618','492357816'];
+    const costs = new Array(magicSquares.length);
+
+    for(let i = 0; i < magicSquares.length; i++) {
+        costs[i] = findCost(s, magicSquares[i]);
     }
 
-    let min=999;
-    for(let x of cost)
-    {
-        if(min>x)
-            min=x;
+    let min = Infinity;
+
+    for(let cost of costs) {
+        if(min > cost) {
+            min = cost;
+        }
     }
     return min;
 }

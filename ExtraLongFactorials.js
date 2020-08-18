@@ -22,25 +22,18 @@ function readLine() {
     return inputString[currentLine++];
 }
 
-// Complete the staircase function below.
-function staircase(n) 
+// Complete the extraLongFactorials function below.
+function extraLongFactorials(n) 
 {
-    let row;
-    for(let i = 1; i <= n; i++) {
-        row="";
-        for(let j = 1; j <= n-i; j++) {
-            row += " ";
-        }
-        
-        for(let k = 1; k <= i; k++) {
-            row += "#";
-        }
-        console.log(row);
+    let factorial = 1n;
+    for(let i = 1n; i <= BigInt(n); i++) {
+        factorial = factorial * i;
     }
+    console.log(String(BigInt(factorial)));
 }
 
 function main() {
     const n = parseInt(readLine(), 10);
 
-    staircase(n);
+    extraLongFactorials(n);
 }
