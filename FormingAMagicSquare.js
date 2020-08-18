@@ -25,7 +25,7 @@ function readLine() {
 }
 
 // Complete the formingMagicSquare function below.
-function findCost(inputMatrix,magicMatrix)
+function findCost(inputMatrix, magicMatrix)
 {
     inputMatrix = inputMatrix.map(s=>s.join('')).join('');
     let cost = 0;
