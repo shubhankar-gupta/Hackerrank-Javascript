@@ -33,7 +33,7 @@ function miniMaxSum(arr)
         sum += BigInt(element);
     }
 
-    console.log(Number(BigInt(sum) - BigInt(max)) +" "+ Number(BigInt(sum) - BigInt(min)));
+    console.log(Number(BigInt(sum) - BigInt(max)) + " " + Number(BigInt(sum) - BigInt(min)));
 }
 
 function main() {

@@ -28,13 +28,13 @@ function readLine() {
 
 function climbingLeaderboard(scores, alice) 
 {
-    let scoresSet=[...new Set(scores)];
-    let count=scoresSet.length-1;
-    const rank=[];
+    let scoresSet = [...new Set(scores)];
+    let count = scoresSet.length-1;
+    const rank = [];
 
     for(let i = 0; i < alice.length; i++) {
-        const aliceScore=alice[i];
-        while(aliceScore > scoresSet[count] && count>0) {
+        const aliceScore = alice[i];
+        while(aliceScore > scoresSet[count] && count > 0) {
             count--;
         }
         if(aliceScore >= scoresSet[count]) {

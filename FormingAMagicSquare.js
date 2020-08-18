@@ -25,12 +25,12 @@ function readLine() {
 }
 
 // Complete the formingMagicSquare function below.
-function findCost(s,magicMatrix)
+function findCost(inputMatrix,magicMatrix)
 {
-    s = s.map(s=>s.join('')).join('');
+    inputMatrix = inputMatrix.map(s=>s.join('')).join('');
     let cost = 0;
     for(let i = 0; i < 9; i++) {
-        cost += Math.abs(s[i]-magicMatrix[i]);
+        cost += Math.abs(s[i] - magicMatrix[i]);
     }
     return cost;
 }
