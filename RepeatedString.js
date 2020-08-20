@@ -24,28 +24,29 @@ function readLine() {
     return inputString[currentLine++];
 }
 
-// Complete the birthdayCakeCandles function below.
-function birthdayCakeCandles(ar) 
-{
-    const sizeOfArray = ar.length;
-    let count = 0;
-    const max = Math.max(...ar);
-     for (let i = 0; i < sizeOfArray; i++) {
-         if(ar[i] == max) {
-             count++;
-         }
-     }
-     return count;
+// Complete the repeatedString function below.
+function repeatedString(s, n) {
+    const timesAdded = Math.floor(n / s.length);
+    let count = (s.split("a").length - 1) * timesAdded;
+    const difference = n % s.length;
+
+    for(let i = 0; i < difference; i++) {
+        if(s[i] == 'a') {
+            count++;
+        }
+    }
+
+    return count;
 }
 
 function main() {
     const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
 
-    const arCount = parseInt(readLine(), 10);
+    const s = readLine();
 
-    const ar = readLine().split(' ').map(arTemp => parseInt(arTemp, 10));
+    const n = parseInt(readLine(), 10);
 
-    let result = birthdayCakeCandles(ar);
+    let result = repeatedString(s, n);
 
     ws.write(result + "\n");
 

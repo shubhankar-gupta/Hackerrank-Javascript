@@ -24,28 +24,30 @@ function readLine() {
     return inputString[currentLine++];
 }
 
-// Complete the birthdayCakeCandles function below.
-function birthdayCakeCandles(ar) 
-{
-    const sizeOfArray = ar.length;
-    let count = 0;
-    const max = Math.max(...ar);
-     for (let i = 0; i < sizeOfArray; i++) {
-         if(ar[i] == max) {
-             count++;
-         }
-     }
-     return count;
+// Complete the equalizeArray function below.
+function equalizeArray(arr) {
+    const size = arr.length;
+    const frequency = new Array(Math.max(...arr) + 1);
+    let max;
+
+    frequency.fill(0);
+    for(let i = 0; i < size; i++) {
+        frequency[arr[i]]++;
+    }
+
+    max = Math.max(...frequency);
+    return (size - max);
+
 }
 
 function main() {
     const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
 
-    const arCount = parseInt(readLine(), 10);
+    const n = parseInt(readLine(), 10);
 
-    const ar = readLine().split(' ').map(arTemp => parseInt(arTemp, 10));
+    const arr = readLine().split(' ').map(arrTemp => parseInt(arrTemp, 10));
 
-    let result = birthdayCakeCandles(ar);
+    let result = equalizeArray(arr);
 
     ws.write(result + "\n");
 
