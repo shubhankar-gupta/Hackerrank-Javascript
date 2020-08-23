@@ -36,10 +36,10 @@ function equalStacks(h1, h2, h3) {
     sum[2] = h3.reduce((a, b) => a + b, 0);
 
     while(true) {
-        if(h1.length == 0 || h2.length == 0 || h3.length == 0) {
+        if(!h1.length || !h2.length || !h3.length) {
             return 0;
         }
-        if(sum[0] == sum[1] && sum[1] == sum[2]) {
+        if(sum[0] === sum[1] && sum[1] === sum[2]) {
             return sum[0];
         }
         if(sum[0] >= sum[1] && sum[0] >= sum[2]) {
